@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_cream"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="@color/color_cccccc" />
+<!--
+            <com.sevenheaven.segmentcontrol.SegmentControl
+                xmlns:segmentcontrol="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/segment_control_horizon"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dip_40"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:textSize="15sp"
+                segmentcontrol:colors="#0099CC"
+                segmentcontrol:cornerRadius="10dip"
+               segmentcontrol:direction="horizon"
+                segmentcontrol:horizonGap="20dip"
+                segmentcontrol:texts="控制|状态|检测"
+                segmentcontrol:verticalGap="8dip" />
+-->
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:id="@+id/ll_work_model"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dip_40"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/selector_btn_blue_line"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/work_model"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="17sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+</LinearLayout>
