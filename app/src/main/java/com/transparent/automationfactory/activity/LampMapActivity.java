@@ -2,11 +2,15 @@ package com.transparent.automationfactory.activity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -24,9 +28,11 @@ import com.transparent.automationfactory.base.map.LampIconParam;
 import com.transparent.automationfactory.base.map.LocationManager;
 import com.transparent.automationfactory.base.map.MapManager;
 import com.transparent.automationfactory.base.views.SlidingDrawer;
-import com.transparent.automationfactory.base.views.ViewLampList;
 import com.transparent.automationfactory.base.views.ViewLampRecycle;
 import com.transparent.automationfactory.base.widget.TowRotateAnimation;
+import com.transparent.automationfactory.fragment.CheckFragment;
+import com.transparent.automationfactory.fragment.ControlFragment;
+import com.transparent.automationfactory.fragment.StatusFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,13 +68,23 @@ public class LampMapActivity extends BaseTitleBarActivity implements BaiduMap.On
     private SlidingDrawer mSlidingDrawer;
     private ImageView mHandleUpImg;
 
+    private RadioGroup rgMap;
+
+    private FragmentManager mFragmentManager;
+    private FrameLayout mFlMapDetail;
+
+    private ControlFragment mControlFragment;
+    private StatusFragment mStatusFragment;
+    private CheckFragment mCheckFragment;
+
     ArrayList<LampListEntity.LampEntity> mLampList = new ArrayList<>();
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mContext = getApplicationContext();;
+        mContext = getApplicationContext();
+        mFragmentManager = getSupportFragmentManager();
         setContentView(R.layout.activity_lamp_map);
         mMapView = (MapView) findViewById(R.id.bmapView);
         initData();
@@ -124,7 +140,7 @@ public class LampMapActivity extends BaseTitleBarActivity implements BaiduMap.On
         BDLocation mLocation = new BDLocation();
         mLocation.setLatitude(39.906134);
         mLocation.setLongitude(116.474439);
-        mapManager.moveMap(mBaiduMap,mLocation);
+        mapManager.moveMap(mBaiduMap, mLocation);
     }
 
     private void initViews() {
@@ -142,6 +158,47 @@ public class LampMapActivity extends BaseTitleBarActivity implements BaiduMap.On
         mSlidingDrawer.setOnDrawerScrollListener(onDrawerScrollListener);
         mSlidingDrawer.setVisibility(View.INVISIBLE);
         mHandleUpImg = (ImageView) findViewById(R.id.img_handle_up);
+
+        initSlidingView();
+    }
+
+    private void initSlidingView() {
+
+        mControlFragment = ControlFragment.newInstance();
+        mStatusFragment = StatusFragment.newInstance();
+        mCheckFragment = CheckFragment.newInstance();
+
+        mFlMapDetail = (FrameLayout) mSlidingDrawer.findViewById(R.id.fl_map_detail);
+        rgMap = (RadioGroup) mSlidingDrawer.findViewById(R.id.rg_map);
+        rgMap.setOnCheckedChangeListener(onCheckedChangeListener);
+        rgMap.check(R.id.rb_map_control);
+    }
+
+    private RadioGroup.OnCheckedChangeListener onCheckedChangeListener = new RadioGroup.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(RadioGroup group, int checkedId) {
+            add(checkedId);
+        }
+    };
+
+    private void add(int checkedId) {
+        FragmentTransaction transaction = mFragmentManager.beginTransaction();
+        Fragment mFragment = mControlFragment;
+        switch (checkedId) {
+            case R.id.rb_map_control:
+                mFragment = mControlFragment;
+                break;
+            case R.id.rb_map_status:
+                mFragment = mStatusFragment;
+                break;
+            case R.id.rb_map_check:
+                mFragment = mCheckFragment;
+                break;
+        }
+        if (null != mFragment) {
+            transaction.replace(mFlMapDetail.getId(), mFragment);
+            transaction.commitAllowingStateLoss();
+        }
     }
 
     private void initListener() {

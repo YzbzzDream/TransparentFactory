@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/default_linear_layout_shape_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_25"
+        android:gravity="center">
+
+        <TextView
+            style="@style/MapStatusText.Normal"
+            android:text="产口名称" />
+
+        <TextView
+            style="@style/MapStatusText.Normal"
+            android:text="工作模式" />
+
+        <TextView
+            style="@style/MapStatusText.Normal"
+            android:text="输出电流" />
+
+        <TextView
+            style="@style/MapStatusText.Normal"
+            android:text="输出电压" />
+
+        <TextView
+            style="@style/MapStatusText"
+            android:layout_width="wrap_content"
+            android:text="线温" />
+
+        <TextView
+            style="@style/MapStatusText"
+            android:layout_width="wrap_content"
+            android:text="人流量" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rl_map_status"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

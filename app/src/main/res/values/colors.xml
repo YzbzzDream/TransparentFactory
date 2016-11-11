@@ -74,4 +74,22 @@
     <color name="c_4897fa">#4897fa</color>
     <color name="c_ecedf1">#ecedf1</color>
     <color name="c_f0f0f0">#f0f0f0</color>
+
+    <color name="c_3b8fed">#3b8fed</color>
+    <color name="c_999999">#999999</color>
+    <color name="c_272727">#272727</color>
+    <color name="c_666666">#666666</color>
+    <color name="c_cccccc">#cccccc</color>
+    <color name="c_ffffff">#ffffff</color>
+    <color name="c_ff0000">#ff0000</color>
+
+
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="result_view">#b0000000</color>
+    <color name="share_view">#ffffffff</color>
+
+    <color name="viewfinder_frame">#ff000000</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="viewfinder_mask">#60000000</color>
+
 </resources>

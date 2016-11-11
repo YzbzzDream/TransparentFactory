@@ -57,4 +57,58 @@
         <item name="android:layout_height">@dimen/dip_100</item>
     </style>
     <!--Home End -->
+
+    <style name="MapTab">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@drawable/map_tab_text_selector</item>
+        <item name="android:background">@drawable/map_tab_item_selector</item>
+        <item name="android:drawablePadding">2dp</item>
+    </style>
+
+    <style name="MapTab.Control">
+        <item name="android:background">@drawable/map_tab_item_selector</item>
+
+    </style>
+
+    <style name="MapTab.Status">
+        <item name="android:background">@drawable/map_tab_item_selector</item>
+    </style>
+
+    <style name="MapTab.Check">
+        <item name="android:background">@drawable/map_tab_item_selector</item>
+    </style>
+
+    <style name="MapStatusText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginLeft">@dimen/dip_5</item>
+    </style>
+
+    <style name="MapStatusText.Normal">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="DefaultLinearLayout">
+        <item name="android:layout_marginTop">@dimen/dip_20</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:divider">@drawable/divider_horizontal_padding_left</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:showDividers">middle</item>
+        <item name="android:background">@drawable/default_linear_layout_shape_bg</item>
+    </style>
+
+    <style name="DefaultRelativeLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">@dimen/dip_13</item>
+    </style>
 </resources>

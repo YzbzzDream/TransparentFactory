@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mm="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialog_view"
+    style="@style/DefaultLinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.transparent.automationfactory.base.view.OptionItemView
+        style="@style/DefaultRelativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        mm:ctitleText="项目名称：上海高铁" />
+
+    <com.transparent.automationfactory.base.view.OptionItemView
+        style="@style/DefaultRelativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        mm:ctitleText="安装区域：行李提取处" />
+
+    <com.transparent.automationfactory.base.view.OptionItemView
+        style="@style/DefaultRelativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        mm:ctitleText="灯箱编号：GT-0001" />
+
+    <com.transparent.automationfactory.base.view.OptionItemView
+        style="@style/DefaultRelativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        mm:ctitleText="灯箱方向：东南面" />
+
+</LinearLayout>

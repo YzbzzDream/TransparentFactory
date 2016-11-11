@@ -70,6 +70,7 @@ public class HomeActivity extends BaseTitleBarActivity implements View.OnClickLi
     private void setViews() {
         findViewById(R.id.cv_lamp).setOnClickListener(this);
         findViewById(R.id.cv_setting).setOnClickListener(this);
+        findViewById(R.id.cv_scan).setOnClickListener(this);
     }
 
     @Override
@@ -80,6 +81,10 @@ public class HomeActivity extends BaseTitleBarActivity implements View.OnClickLi
                 break;
             case R.id.cv_setting:
                 startActivity(new Intent(this, SettingActivity.class));
+                break;
+            case R.id.cv_scan:
+                Intent intent = new Intent(this, CaptureActivity.class);
+                startActivity(intent);
                 break;
             default:
                 break;

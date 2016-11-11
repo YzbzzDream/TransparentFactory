@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ @项目名称: ETCP停车
+  ~ @文件名称: ids.xml
+  ~ @Copyright: 2016 悦畅科技有限公司. All rights reserved.
+  ~ 注意：本内容仅限于悦畅科技有限公司内部传阅，禁止外泄以及用于其他的商业目的
+  -->
+
+<resources>
+    <!-- Messages IDs -->
+    <item name="auto_focus" type="id" />
+    <item name="decode" type="id" />
+    <item name="decode_failed" type="id" />
+    <item name="decode_succeeded" type="id" />
+    <item name="encode_failed" type="id" />
+    <item name="encode_succeeded" type="id" />
+    <item name="launch_product_query" type="id" />
+    <item name="quit" type="id" />
+    <item name="restart_preview" type="id" />
+    <item name="return_scan_result" type="id" />
+    <item name="search_book_contents_failed" type="id" />
+    <item name="search_book_contents_succeeded" type="id" />
+
+    <item name="smContentView" type="id" />
+    <item name="smMenuViewLeft" type="id" />
+    <item name="smMenuViewRight" type="id" />
+
+    <item name="scrollview" type="id" />
+</resources>

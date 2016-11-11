@@ -75,4 +75,16 @@
     <string name="main_exit_message">再按一次退出程序</string>
 
     <string name="work_model">工作模式</string>
+    <!--Map-->
+    <string name="map_control">控制</string>
+    <string name="map_status">状态</string>
+    <string name="map_check">检测</string>
+
+    <string name="scan">扫一扫</string>
+    <string name="text_scan">将二维码放到框内即可扫描</string>
+    <string name="cmera_is_not_working">相机无法正常打开请检查权限</string>
+    <string name="scan_code_failed">请扫描正确的二维码</string>
+
+    <string name="map_check_text">您所辖项目灯箱现已出现故障，该灯箱光源已经偏离正常工作状态，可能约在45天内停止工作，请尽快安排进行检修。</string>
+
 </resources>
